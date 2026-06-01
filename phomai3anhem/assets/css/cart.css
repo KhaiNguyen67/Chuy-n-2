@@ -1,0 +1,217 @@
+/* ============================================================
+   File: assets/css/cart.css
+   Chức năng: Style trang Giỏ Hàng
+   ============================================================ */
+
+/* ---------- Glass Card ---------- */
+.glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------- Ảnh sản phẩm trong giỏ ---------- */
+.cart-img {
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #e8e8e8;
+    transition: transform 0.2s ease;
+}
+
+.cart-img:hover {
+    transform: scale(1.06);
+}
+
+/* ---------- Bảng ---------- */
+.table thead th {
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #888;
+    border-bottom: 2px solid #f0ece4;
+    padding-bottom: 12px;
+}
+
+.table tbody tr {
+    transition: background 0.15s ease;
+}
+
+.table tbody tr:hover {
+    background: rgba(212, 175, 55, 0.05);
+}
+
+.table tbody td {
+    padding: 14px 12px;
+    border-color: #f5f2ec;
+    vertical-align: middle;
+}
+
+/* ---------- Điều chỉnh số lượng ---------- */
+.qty-control {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.btn-qty {
+    width: 28px;
+    height: 28px;
+    border: 1px solid #d4af37;
+    background: transparent;
+    border-radius: 6px;
+    color: #d4af37;
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-qty:hover {
+    background: #d4af37;
+    color: #fff;
+}
+
+.btn-qty:active {
+    transform: scale(0.92);
+}
+
+.qty-input {
+    width: 46px;
+    height: 28px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+    padding: 0 4px;
+    text-align: center;
+    -moz-appearance: textfield;
+}
+
+.qty-input::-webkit-outer-spin-button,
+.qty-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.qty-input:focus {
+    outline: none;
+    border-color: #d4af37;
+    box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+}
+
+/* ---------- Nút xóa ---------- */
+.btn-delete {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    color: #dc3545;
+    transition: all 0.18s ease;
+    text-decoration: none;
+}
+
+.btn-delete:hover {
+    background: rgba(220, 53, 69, 0.1);
+    color: #dc3545;
+    transform: scale(1.1);
+}
+
+/* ---------- Tóm tắt đơn hàng ---------- */
+.order-summary {
+    position: sticky;
+    top: 20px;
+}
+
+.order-summary h4 {
+    font-size: 1.1rem;
+    border-bottom: 2px solid #f0ece4;
+    padding-bottom: 12px;
+    color: #2c2c2c;
+}
+
+.order-summary span {
+    font-size: 0.95rem;
+    color: #555;
+}
+
+#summary-subtotal,
+#summary-total {
+    font-weight: 700;
+    color: #2c2c2c;
+}
+
+#summary-total {
+    font-size: 1.1rem;
+    color: #dc3545 !important;
+}
+
+/* ---------- Nút vàng ---------- */
+.btn-gold {
+    background: linear-gradient(135deg, #d4af37 0%, #b8962e 100%);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35);
+}
+
+.btn-gold:hover {
+    background: linear-gradient(135deg, #c9a227 0%, #a8861e 100%);
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.45);
+}
+
+.btn-gold:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
+}
+
+/* ---------- Giỏ hàng trống ---------- */
+.glass-card .bi-bag-x {
+    color: #ccc;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+    .cart-img {
+        width: 52px;
+        height: 52px;
+    }
+
+    .table thead th {
+        font-size: 0.75rem;
+    }
+
+    .table tbody td {
+        padding: 10px 8px;
+    }
+
+    .qty-input {
+        width: 38px;
+    }
+
+    .btn-qty {
+        width: 24px;
+        height: 24px;
+        font-size: 0.85rem;
+    }
+
+    .order-summary {
+        position: static;
+    }
+}
