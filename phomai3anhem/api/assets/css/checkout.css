@@ -1,0 +1,206 @@
+/* ============================================================
+   File: assets/css/checkout.css
+   Chức năng: Style trang Thanh Toán
+   ============================================================ */
+ 
+/* ---------- Form card bên trái ---------- */
+.checkout-form-card {
+    background: #fff;
+    border: 1px solid #e8e4da;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+ 
+.checkout-form-card .form-control {
+    border-color: #e0dbd0;
+    font-size: 0.9rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+ 
+.checkout-form-card .form-control:focus {
+    border-color: #d4af37;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.18);
+}
+ 
+.checkout-form-card textarea.form-control {
+    resize: vertical;
+}
+ 
+/* ---------- Glass Card (tóm tắt đơn hàng) ---------- */
+.glass-card {
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+ 
+/* ---------- Danh sách sản phẩm ---------- */
+.cart-items-wrapper {
+    max-height: 340px;
+    overflow-y: auto;
+    padding-right: 4px;
+    scrollbar-width: thin;
+    scrollbar-color: #d4af37 #f0ece4;
+}
+ 
+.cart-items-wrapper::-webkit-scrollbar {
+    width: 5px;
+}
+ 
+.cart-items-wrapper::-webkit-scrollbar-track {
+    background: #f0ece4;
+    border-radius: 10px;
+}
+ 
+.cart-items-wrapper::-webkit-scrollbar-thumb {
+    background: #d4af37;
+    border-radius: 10px;
+}
+ 
+/* ---------- Từng dòng sản phẩm ---------- */
+.product-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: box-shadow 0.2s ease, background 0.2s ease;
+}
+ 
+.product-row:hover {
+    background: #fffdf7;
+    box-shadow: 0 4px 14px rgba(212, 175, 55, 0.12);
+}
+ 
+.product-row:last-child {
+    margin-bottom: 0;
+}
+ 
+.product-info {
+    flex: 1;
+    min-width: 0;
+}
+ 
+.product-info h6 {
+    font-size: 0.88rem;
+    line-height: 1.35;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+ 
+.product-info .item-price-display {
+    font-size: 0.8rem;
+}
+ 
+/* ---------- Nhóm số lượng + thành tiền ---------- */
+.product-qty-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+ 
+.qty-control {
+    max-width: 110px;
+}
+ 
+.qty-control .btn-outline-secondary {
+    border-color: #d4af37;
+    color: #d4af37;
+    padding: 3px 8px;
+    transition: all 0.15s ease;
+}
+ 
+.qty-control .btn-outline-secondary:hover {
+    background: #d4af37;
+    color: #fff;
+}
+ 
+.qty-control .input-qty {
+    border-color: #e0dbd0;
+    font-size: 0.88rem;
+    padding: 0 4px;
+}
+ 
+.item-subtotal {
+    font-size: 0.88rem;
+    min-width: 80px;
+    text-align: right;
+    white-space: nowrap;
+}
+ 
+/* ---------- Tổng tiền cuối ---------- */
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.93rem;
+}
+ 
+.summary-total {
+    padding-top: 4px;
+}
+ 
+/* ---------- Nút vàng ---------- */
+.btn-gold {
+    background: linear-gradient(135deg, #d4af37 0%, #b8962e 100%);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    transition: all 0.22s ease;
+    box-shadow: 0 4px 18px rgba(212, 175, 55, 0.38);
+}
+ 
+.btn-gold:hover {
+    background: linear-gradient(135deg, #c9a227 0%, #a8861e 100%);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.5);
+}
+ 
+.btn-gold:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 10px rgba(212, 175, 55, 0.3);
+}
+ 
+.btn-gold:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    transform: none;
+}
+ 
+/* ---------- Trạng thái đặt hàng thành công ---------- */
+.glass-card .bi-check-circle-fill {
+    filter: drop-shadow(0 4px 12px rgba(25, 135, 84, 0.3));
+}
+ 
+/* ---------- Responsive ---------- */
+@media (max-width: 576px) {
+    .item-subtotal {
+        display: none; /* ẩn cột thành tiền trên mobile nhỏ */
+    }
+ 
+    .product-row {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+ 
+    .product-qty-group {
+        width: 100%;
+        justify-content: flex-end;
+    }
+ 
+    .cart-items-wrapper {
+        max-height: 260px;
+    }
+}
